@@ -1,3 +1,4 @@
+import 'package:bloc_practice/config/components/internet_exception.dart';
 import 'package:bloc_practice/config/components/loading_widget.dart';
 import 'package:bloc_practice/config/components/round_button.dart';
 import 'package:bloc_practice/config/routes/routes_name.dart';
@@ -19,13 +20,31 @@ class _SplashScreenState extends State<SplashScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            RoundButton(title: "Login", onPress: () {}),
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, RoutesName.homeScreen);
-                },
-                child: Text("Home"),
+            RoundButton(
+              height: 50,
+              title: "Login",
+              onPress: () {
+                Navigator.pushNamed(context, RoutesName.loginScreen);
+              },
+            ),
+            SizedBox(height: 30),
+            RoundButton(
+              height: 50,
+              title: "Home",
+              onPress: () {
+                Navigator.pushNamed(context, RoutesName.homeScreen);
+              },
+            ),
+
+            SizedBox(height: 50),
+            Container(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: InternetException(onpress: () {}),
+                  ),
+                ],
               ),
             ),
           ],
