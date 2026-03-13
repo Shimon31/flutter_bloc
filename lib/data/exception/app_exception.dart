@@ -9,3 +9,7 @@ class AppException implements Exception {
     return '$_message$_prefix';
   }
 }
+
+class NoInternetException extends AppException{
+  NoInternetException([String? message]) : super(message,'No Internet Connection');
+}

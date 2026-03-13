@@ -2,6 +2,7 @@ import 'package:bloc_practice/config/components/internet_exception.dart';
 import 'package:bloc_practice/config/components/loading_widget.dart';
 import 'package:bloc_practice/config/components/round_button.dart';
 import 'package:bloc_practice/config/routes/routes_name.dart';
+import 'package:bloc_practice/data/exception/app_exception.dart';
 import 'package:bloc_practice/views/home/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        throw NoInternetException('No Internet');
+      }),
       body: SafeArea(
         child: Column(
           children: [
